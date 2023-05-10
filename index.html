@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>treine.me</title>
 
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -31,19 +33,33 @@
           life.
         </p>
 
-        <button>Start now</button>
+        <button class="modal-open" data-modal-open>Start now</button>
         <a
           href="https://www.figma.com/file/pwgezkALSN7KNbB15lRFJR/Layout-to-study-HTML-%26-CSS-(Community)?type=design&node-id=1212-47&t=IqGNkRuZPwAgAgYp-0"
+          target="_blank"
           >Link to Figma</a
         >
         <img class="pic" src="pic.png" width="450" height="450" />
       </div>
 
-      <div class="modal-container">
+      <div class="modal-backdrop is-hidden" data-modal>
         <div class="modal">
+          <button class="modal-btn modal-close" data-modal-close>
+            <i data-feather="x"></i>
+          </button>
+          <h1>join to us now!</h1>
           <form>
-            <label for="name"></label>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" />
+            <label for="tel">Telephone</label>
+            <input id="tel" type="tel" name="tel" />
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="email" />
           </form>
+
+          <button class="modal-btn modal-accept">
+            <i class="modal-accept-icon" data-feather="check"></i>
+          </button>
         </div>
       </div>
 
@@ -53,5 +69,10 @@
         </div>
       </footer>
     </main>
+
+    <script>
+      feather.replace();
+    </script>
+    <script src="click.js"></script>
   </body>
 </html>
